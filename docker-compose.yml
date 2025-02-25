@@ -1,0 +1,14 @@
+networks:
+  my-network:
+
+services:
+  my-app:
+    container_name: my-app
+    build: ./
+    restart: always
+    ports:
+      - 3000:3000
+    volumes:
+      - ./my-app:/usr/src/app
+    networks:
+      - my-network
